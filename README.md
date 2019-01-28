@@ -1,4 +1,12 @@
-# Gilded Rose Requirements Specification
+# Gilded Rose
+
+### Guidance Notes
+
+- Clone or fork this repo, and do this exercise in any of the available languages that you are most comfortable using.
+- There is no time limit to this exercise, but try to time box it for yourself to avoid spending an inordinate amount of effort on it.
+- A history of git commits will be very helpful when we go on to discuss the exercise.
+
+### Requirements Specification
 
 Hi and welcome to team Gilded Rose. 
 
