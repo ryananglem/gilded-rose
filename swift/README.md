@@ -1,7 +1,7 @@
 To build this example package:
 
     git clone https://github.com/notonthehighstreet/gilded-rose.git
-    cd swift/
+    cd gilded-rose/swift/
     swift run
 
 To build and run tests:
