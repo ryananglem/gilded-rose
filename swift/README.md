@@ -1,4 +1,6 @@
-To build this example package:
+# Gilded Rose (Swift)
+
+To build and run:
 
     git clone https://github.com/notonthehighstreet/gilded-rose.git
     cd gilded-rose/swift/
