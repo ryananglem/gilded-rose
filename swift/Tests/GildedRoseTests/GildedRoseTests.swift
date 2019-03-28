@@ -1,5 +1,7 @@
-@testable import GildedRose
+import Foundation
 import XCTest
+
+@testable import GildedRose
 
 class GildedRoseTests: XCTestCase {
 
@@ -9,10 +11,14 @@ class GildedRoseTests: XCTestCase {
         app.updateQuality();
         XCTAssertEqual("fixme", app.items[0].name);
     }
+}
 
+#if os(Linux)
+extension GildedRoseTests {
     static var allTests : [(String, (GildedRoseTests) -> () throws -> Void)] {
         return [
             ("testFoo", testFoo),
         ]
-    }
+    }    
 }
+#endif
