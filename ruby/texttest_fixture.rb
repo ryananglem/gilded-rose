@@ -2,7 +2,7 @@
 
 require File.join(File.dirname(__FILE__), 'gilded_rose')
 
-puts "OMGHAI!"
+puts "Starting Gilded Rose"
 items = [
   Item.new(name="+5 Dexterity Vest", sell_in=10, quality=20),
   Item.new(name="Aged Brie", sell_in=2, quality=0),

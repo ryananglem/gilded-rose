@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	fmt.Println("OMGHAI!")
+	fmt.Println("Starting Gilded Rose")
 
 	var items = []*Item{
 		&Item{"+5 Dexterity Vest", 10, 20},
