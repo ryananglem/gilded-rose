@@ -36,6 +36,9 @@ describe('basic quality rules', () => {
         expect(added.quality).to.equal(0);
         expect(added.sellIn).to.equal(-1);
     });
+})
+
+describe('aged brie quality', () => { 
 
     it('quality of Aged Brie goes up', () => {
         const gildedRose = new GildedRose([ new Item('Aged Brie', 1, 1) ]);
@@ -61,7 +64,7 @@ describe('basic quality rules', () => {
     });
 })
 
-describe('complex quality rules', () => {
+describe('sulfuras quality rules', () => {
     it('should not decrease quality for sulfuras', () => {
         const gildedRose = new GildedRose([ new Item('Sulfuras, Hand of Ragnaros', 1, 1) ]);
         const items = gildedRose.updateQuality();
@@ -69,6 +72,9 @@ describe('complex quality rules', () => {
         expect(added.quality).to.equal(1);
         expect(added.sellIn).to.equal(1);
     });
+})
+
+describe('backstage pass quality rules', () => {
     it('should increase quality of backstage passes by 1 when more than 10 days remaining', () => {
         const gildedRose = new GildedRose([ new Item('Backstage passes to a TAFKAL80ETC concert', 11, 1) ]);
         const items = gildedRose.updateQuality();
