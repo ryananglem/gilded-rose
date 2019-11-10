@@ -30,6 +30,9 @@ export class GildedRose {
                 else if (currentItem.name=== 'Sulfuras, Hand of Ragnaros') {
                     currentItem = this.updateQualityForSulfuras(currentItem)
                 }
+                else if (currentItem.name === 'Conjured') {
+                    currentItem = this.updateQualityForConjured(currentItem)
+                }
                 else {
                     currentItem = this.updateQualityForNormalItem(currentItem)
                 }
@@ -39,7 +42,7 @@ export class GildedRose {
     updateQualityForAgedBrie(item) :Item {
         if (item.quality < 49 ) {
             item.quality = item.quality + 1; 
-            if (item.sellIn < 0 && item.quality <50) {
+            if (item.sellIn < 0 && item.quality < 50) {
                 item.quality =  item.quality + 1
             }
         }
@@ -73,18 +76,25 @@ export class GildedRose {
         return item
     }
     updateQualityForConjured(item) :Item {
+        item = this.updateQualityItem(item)
+        item = this.updateQualityItem(item)
+        item.sellIn = item.sellIn - 1
 
         return item
     }
 
-    updateQualityForNormalItem(item) :Item {
-       
+    updateQualityItem(item): Item {
         if (item.quality > 0) {
             item.quality = item.quality - 1;
             if (item.sellIn <= 0 && item.quality > 0 ) {
                 item.quality = item.quality -1;
             }   
         }
+        return item
+    }
+
+    updateQualityForNormalItem(item) :Item {
+        item = this.updateQualityItem(item)
         item.sellIn = item.sellIn - 1
 
         return item
