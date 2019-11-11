@@ -17,26 +17,31 @@ export class GildedRose {
         this.items = items;
     }
 
-    updateQuality() {
-        for (let i = 0; i < this.items.length; i++) {
-            let currentItem = this.items[i]
-
-            if (currentItem.name==='Aged Brie') {
-                currentItem = this.updateQualityForAgedBrie(currentItem)
+    updateQuality() :Item[]  {
+        this.items.forEach(currentItem => {
+            
+            switch (currentItem.name) {
+                case 'Aged Brie': {
+                    currentItem = this.updateQualityForAgedBrie(currentItem)
+                    break;
                 }
-                else if (currentItem.name==='Backstage passes to a TAFKAL80ETC concert') {
-                    currentItem = this.updateQualityForConcert(currentItem)
+                case 'Backstage passes to a TAFKAL80ETC concert': {
+                        currentItem = this.updateQualityForConcert(currentItem)
+                        break;
+                    }
+                case  'Sulfuras, Hand of Ragnaros':  {
+                        currentItem = this.updateQualityForSulfuras(currentItem)
+                        break;
+                    }
+                case 'Conjured':  {
+                        currentItem = this.updateQualityForConjured(currentItem)
+                        break;
                 }
-                else if (currentItem.name=== 'Sulfuras, Hand of Ragnaros') {
-                    currentItem = this.updateQualityForSulfuras(currentItem)
+                    default: {
+                        currentItem = this.updateQualityForNormalItem(currentItem)
                 }
-                else if (currentItem.name === 'Conjured') {
-                    currentItem = this.updateQualityForConjured(currentItem)
-                }
-                else {
-                    currentItem = this.updateQualityForNormalItem(currentItem)
-                }
-        }
+            }
+        })
         return this.items;
     }
     updateQualityForAgedBrie(item) :Item {
@@ -66,13 +71,14 @@ export class GildedRose {
                 }
             }
         }
-        item.sellIn = item.sellIn  -1
+        item.sellIn = item.sellIn -1
 
-        return item
+        return item;
     }
 
     updateQualityForSulfuras(item) :Item {
-        item.quality = 80
+        item.quality = 80;
+
         return item
     }
     updateQualityForConjured(item) :Item {
@@ -90,6 +96,7 @@ export class GildedRose {
                 item.quality = item.quality -1;
             }   
         }
+
         return item
     }
 
