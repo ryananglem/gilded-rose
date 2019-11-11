@@ -18,9 +18,8 @@ export class GildedRose {
     }
 
     updateQuality() :Item[]  {
-        for (let i = 0; i < this.items.length; i++) {
-            let currentItem = this.items[i]
-
+        this.items.forEach(currentItem => {
+            
             switch (currentItem.name) {
                 case 'Aged Brie': {
                     currentItem = this.updateQualityForAgedBrie(currentItem)
@@ -42,10 +41,9 @@ export class GildedRose {
                         currentItem = this.updateQualityForNormalItem(currentItem)
                 }
             }
-        }
+        })
         return this.items;
     }
-
     updateQualityForAgedBrie(item) :Item {
         if (item.quality < 49 ) {
             item.quality = item.quality + 1; 
