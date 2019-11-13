@@ -1,5 +1,6 @@
 import { expect } from 'chai';
-import { Item, GildedRose } from '../app/gilded-rose';
+import { GildedRose } from '../app/gilded-rose';
+import { Item } from '../app/item';
 
 describe('Gilded Rose', () => {
 
@@ -16,7 +17,7 @@ describe('basic quality rules', () => {
     it('should update quality for sellin 1 day', () => {
         const gildedRose = new GildedRose([ new Item('foo', 1, 1) ]);
         const items = gildedRose.updateQuality();
-         const added =items[0]
+        const added =items[0]
         expect(added.quality).to.equal(0);
         expect(added.sellIn).to.equal(0);
     });
