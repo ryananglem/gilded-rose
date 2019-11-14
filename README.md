@@ -4,7 +4,7 @@
 
  - I used the Typescript implementation for the excercise
  
- - Given more time I would have split the test and code files and as suggested, used a static implementation of `Update Quality`
+ - I could have split the code into separate files for each of the item types, but chose instead to have a single `updateQuality.ts` file. Im not fixed to this implementation, it just made sense when I was coding. As part of a team, I'd ask the team what they thought
  
  - I chose not to commit work with failing tests, so there is a bit of a gap in the commit history during the refactor while I took the code and made all the tests Id written, pass. I could possibly have mitigated this by breaking the code into pieces instead of writing all the tests first and then refactoring (or of course, committing failing tests)
 
