@@ -130,4 +130,12 @@ describe('conjured items', () => {
         expect(added.quality).to.equal(0);
         expect(added.sellIn).to.equal(-1);
     });
+
+    it('should lower quality by 3 if exactly 5 days left', () => {
+        const gildedRose = new GildedRose([ new Item('Conjured', 5, 6 )])
+        const items = gildedRose.updateQuality();
+        const added = items[0]
+        expect(added.quality).to.equal(3);
+        expect(added.sellIn).to.equal(4);
+    })
 })

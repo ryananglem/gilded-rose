@@ -38,9 +38,19 @@ export const updateQualityForSulfuras = (item) :Item => {
     return item
 }
 
+const updateConjuredQuality = (item):Item  => {
+    item.quality  = updateQualityItem(item)
+    item.quality = updateQualityItem(item)
+    return item
+}
+
 export const updateQualityForConjured = (item) :Item => {
-    item = updateQualityItem(item)
-    item = updateQualityItem(item)
+    if (item.sellIn === 5) {
+        item.quality -= 3
+    } else {
+        item = updateQualityItem(item)
+        item = updateQualityItem(item)
+    }
     item.sellIn -= 1
 
     return item
